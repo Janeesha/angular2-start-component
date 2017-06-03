@@ -8,10 +8,12 @@ import {HomeComponent} from './components/home/home.components'
 
 import {AboutComponent} from './components/about/about.component'
 
+import{SampleComponent} from  './sample.component'
+
 @NgModule({
 
 	imports:[BrowserModule,FormsModule],
-	declarations:[AppComponent,HomeComponent,AboutComponent],
+	declarations:[AppComponent,HomeComponent,AboutComponent,SampleComponent],
 	bootstrap:[AppComponent]
 
 })
