@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>4Labs | 404 </title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="fontawesome-5/css/all.css">    
+    <link rel="stylesheet" href="css/product-slider.css">
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <!--::header part start::-->
+    <div class="header" id="myHeader"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-lg-2 col-xl-2">
+            <div class="logoM">
+              <a href="home"><img src="images/logo-w.png" title="" alt="logo"></a>
+            </div>
+          </div>
+          <div class="col-md-8 col-lg-8 col-xl-8">
+            <div class="menusec white-m">
+           <div id='cssmenu'>
+             <ul>
+               <li><a href='about-us'>About Us</a></li>
+               <li><a  href='the-services-we-offer'>Our Service</a></li>
+               <li><a  href='case-studies'>Case Studies</a></li>
+             </ul>
+           </div>
+         </div><!--menu-->  
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2">
+            <a class="contact-btn"  href="contact-us">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div><!--header-->  
+    
+<div class="f404-banner"></div>
+
+
+<div class="f404C">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+            	<div class="f-40-img"><img src="images/404.jpg" title="404" alt="404"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="Q-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-6 col-xl-6 wow fadeInLeft">
+        <h2>Leveraging Technology to Transform Businesses</h2>  
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-6 wow fadeInRight">
+        <div class="fltr">
+        <h3>Let us reach you</h3>
+        <div class="news-letter-sc">
+          <input type="text" class="text-box" placeholder="Email ID" id="news_email_footer">
+          <input type="submit" value="" class="news-btn" onClick="newsletter_footer()">
+		  <div id="errormessage1nfooter" style="margin-top:10px"> </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><script>
+
+function newsletter_footer()
+{
+var femail=document.getElementById("news_email_footer").value;
+if(femail=="")
+		{
+			document.getElementById("news_email_footer").focus();
+             $("#news_email_footer").css('border',"1px solid red");
+			return false;
+		}
+		else
+		{
+		 $("#news_email_footer").css('border',"none");
+		}
+		if(femail!="")
+		{
+			var atpos=femail.indexOf("@");
+			var dotpos=femail.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=femail.length)
+			{		
+				document.getElementById("news_email_footer").focus();
+             $("#news_email_footer").css('border',"1px solid red");
+				return false;
+			}
+			
+		}
+		else
+		{
+		 $("#news_email_footer").css('border',"none");
+		}
+				$.ajax({
+		
+		type: "POST",
+		
+		cache: false,
+		
+		url: "newsletter_footer.php",
+		
+		data: "femail="+femail,
+		
+		success: function(data) {
+		//alert(data);
+		if(data==1)
+		{
+		
+       $('#errormessage1nfooter').show();
+		document.getElementById("errormessage1nfooter").innerHTML='<div role="alert" class="alert alert-success" >Thank you for your Subscription. We will revert to you soon</div>';
+		setInterval(function() {  
+      $('#errormessage1nfooter').hide(8000);  
+     });
+		
+		document.getElementById("news_email_footer").value="";
+		
+		
+		}
+		if(data==2)
+		{
+		
+		
+		$('#errormessage1nfooter').show();
+		document.getElementById("errormessage1nfooter").innerHTML='<div role="alert" class="alert alert-success" >Subscription Failed</div>';
+		setInterval(function() {  
+      $('#errormessage1nfooter').hide(8000);  
+     });
+		document.getElementById("news_email_footer").value="";
+		
+		}
+		if(data==3)
+		{
+		
+		$('#errormessage1nfooter').show();
+		document.getElementById("errormessage1nfooter").innerHTML='<div role="alert" class="alert alert-success" >Email ID already subscribed.</div>';
+		setInterval(function() {  
+      $('#errormessage1nfooter').hide(8000);  
+     });
+		document.getElementById("news_email_footer").value="";
+				}
+		
+		}
+		
+		})
+}
+</script><div class="footer">
+  <div class="container">
+    <div class="row wow fadeInUp">
+      <div class="col-md-4 col-lg-4 col-xl-4">
+        <div class="f-logo">
+          <a href="home">
+            <img src="images/logo.png" title="" alt="logo">
+          </a>
+        </div>
+        <h2>All about digital transformation</h2>
+        <ul class="socialMedia2">
+          <li><a href="https://www.facebook.com/4Labs-Technologies-108323803917676" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/4labstechnologies/mycompany/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>    
+        </ul>
+      </div><!--col-->
+      <div class="col-md-3 col-lg-3 col-xl-3">
+        <div class="add-b">
+          <h2>Contact Us</h2>
+          <a class="mail-f" href=""><img src="images/mail.png" title="" alt="mail"></a>
+          <p>US - Suite # 1600, 700<br>Walnut Street<br>Des Moines, IA 50309</p>
+        </div> 
+      </div><!--col-->
+      <div class="col-md-3 col-lg-3 col-xl-3">
+        <div class="m-link">
+          <ul>
+             <li><a href="about-us">About Us</a></li>
+            <li><a href="the-services-we-offer">Our Service</a></li>
+            <li><a href="case-studies">Case Studies</a></li>
+          </ul>
+        </div> 
+      </div><!--col-->
+      <div class="col-md-2 col-lg-2 col-xl-2">
+        <div class="m-link">
+          <ul>
+            <li><a href="">Career</a></li>
+            <!--<li><a href="">Blog</a></li>-->
+          </ul>
+        </div> 
+      </div><!--col-->
+    </div>
+  </div>
+</div>
+<div class="copyright">
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Copyright © 2022 4Labs</p>
+    </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function newsletter()
+{
+var femail=document.getElementById("news_email").value;
+if(femail=="")
+		{
+			document.getElementById("news_email").focus();
+             $("#news_email").css('border',"1px solid red");
+			return false;
+		}
+		else
+		{
+		 $("#news_email").css('border',"none");
+		}
+		if(femail!="")
+		{
+			var atpos=femail.indexOf("@");
+			var dotpos=femail.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=femail.length)
+			{		
+				document.getElementById("news_email").focus();
+             $("#news_email").css('border',"1px solid red");
+				return false;
+			}
+			
+		}
+		else
+		{
+		 $("#news_email").css('border',"none");
+		}
+				$.ajax({
+		
+		type: "POST",
+		
+		cache: false,
+		
+		url: "newsletter.php",
+		
+		data: "femail="+femail,
+		
+		success: function(data) {
+		//alert(data);
+		if(data==1)
+		{
+		
+       $('#errormessage1n').show();
+		document.getElementById("errormessage1n").innerHTML='<div role="alert" class="alert alert-success" >Thank you for your Subscription. We will revert to you soon</div>';
+		setInterval(function() {  
+      $('#errormessage1n').hide(8000);  
+     });
+		
+		document.getElementById("news_email").value="";
+		
+		
+		}
+		if(data==2)
+		{
+		
+		
+		$('#errormessage1n').show();
+		document.getElementById("errormessage1n").innerHTML='<div role="alert" class="alert alert-success" >Subscription Failed</div>';
+		setInterval(function() {  
+      $('#errormessage1n').hide(8000);  
+     });
+		document.getElementById("news_email").value="";
+		
+		}
+		if(data==3)
+		{
+		
+		$('#errormessage1n').show();
+		document.getElementById("errormessage1n").innerHTML='<div role="alert" class="alert alert-success" >Email ID already subscribed.</div>';
+		setInterval(function() {  
+      $('#errormessage1n').hide(8000);  
+     });
+		document.getElementById("news_email").value="";
+				}
+		
+		}
+		
+		})
+}
+</script>
+
+
+
+    <!-- jquery plugins here-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/flexisel.js"></script>
+    <script src="fontawesome-5/js/all.js"></script>
+    <script src="js/lightbox-2.6.min.js"></script>
+    <script src="js/wow.js"></script>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky2");
+  } else {
+    header.classList.remove("sticky2");
+  }
+}
+</script>
+
+<script>
+$(function() {
+ $('.scroll-outer a[href*=#]:not([href=#])').click(function() {
+   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+     var target = $(this.hash);
+     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+     if (target.length) {
+       $('html,body').animate({
+         scrollTop: target.offset().top -190
+       }, 1000);
+       return false;
+     }
+   }
+ });
+});
+</script>
+
+<script>
+$('.carousel').carousel({
+   pause: "false"
+});
+</script>
+    
+<script>
+	
+	/* Demo Scripts for Bootstrap Carousel and Animate.css article
+* on SitePoint by Maria Antonietta Perna
+*/
+(function( $ ) {
+
+	//Function to animate slider captions 
+	function doAnimations( elems ) {
+		//Cache the animationend event in a variable
+		var animEndEv = 'webkitAnimationEnd animationend';
+		
+		elems.each(function () {
+			var $this = $(this),
+				$animationType = $this.data('animation');
+			$this.addClass($animationType).one(animEndEv, function () {
+				$this.removeClass($animationType);
+			});
+		});
+	}
+	
+	//Variables on page load 
+	var $myCarousel = $('#carouselExampleCaptions'),
+		$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+		
+	//Initialize carousel 
+	$myCarousel.carousel();
+	
+	//Animate captions in first slide on page load 
+	doAnimations($firstAnimatingElems);
+	
+	//Pause carousel  
+	$myCarousel.carousel('pause');
+	
+	
+	//Other slides to be animated on carousel slide event 
+	$myCarousel.on('slide.bs.carousel', function (e) {
+		var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
+		doAnimations($animatingElems);
+	});  
+	
+})(jQuery);
+	</script>
+    
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       20,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function() {
+      var section = document.createElement('section');
+      section.className = 'section--purple wow fadeInDown';
+      this.parentNode.insertBefore(section, this);
+    };
+</script>
+    
+<script>
+$( document ).ready(function() {
+
+	$(window).scroll(function() {    
+				    var scroll = $(window).scrollTop();
+
+				    if (scroll >= 100) {
+						$(".logoC img").css("width","100px");				
+				        $("header").addClass("scroll_css");
+						$(".FLT-right").css("margin","10px 0px 0px");	
+                        $("#cssmenu ul li a").css("padding","15px 17px 14px");	
+						$(".header").css("background","rgba(255,255,255,0.9)");	
+						
+						
+				    } else {
+				    	 $("header").removeClass("scroll_css");
+						$(".logoC img").css("width","136px");
+						$(".FLT-right").css("margin","15px 0px 0px");
+                        $("#cssmenu ul li a").css("padding","17px 17px 14px");
+						$(".header").css("background","none");
+						
+										       
+				    }
+				});
+});
+
+
+</script>
+    
+    <script>
+
+    $(window).on('load', function(){
+  // Please run it with window.onload, not with document.ready
+  initSmoothScrolling('.block','smoothscroll');
+});
+
+function initSmoothScrolling(container,animation){
+ /*
+	* @param {String} container Class or ID of the animation container
+	* @param {String} animation Name of the animation, e.g. smoothscroll
+	*/
+	var sliderWidth = 0;	
+	var animationWidth = 0;	
+	var sliderHeight = $('>div>div:first-of-type',container).outerHeight(false);
+
+	$('>div>div', container).each(function(){				
+		animationWidth += $(this).outerWidth(false);		
+	});
+	
+	// detect number of visible slides
+	var slidesVisible = $(container).width() / $('>div>div:first-of-type',container).outerWidth(false);	
+	slidesVisible = Math.ceil(slidesVisible);
+
+  // count slides to determine animation speed
+	var slidesNumber = $('>div>div', container).length;
+	var speed = slidesNumber*2;
+	
+// append the tail	
+	$('>div>div',container).slice(0,slidesVisible).clone().appendTo($('>div',container));	
+
+	// Detect the slider width with appended tail
+	$('>div>div', container).each(function(){
+		sliderWidth += $(this).outerWidth(false);
+	});
+
+	// set slider dimensions
+	$('>div',container).css({'width':sliderWidth,'height':sliderHeight});
+  
+// Insert styles to html
+	$("<style type='text/css'>@keyframes "+animation+" { 0% { margin-left: 0px; } 100% { margin-left: -"+animationWidth+"px; } } "+$('>div>div:first-of-type',container).selector+" { -webkit-animation: "+animation+" "+speed+"s linear infinite; -moz-animation: "+animation+" "+speed+"s linear infinite; -ms-animation: "+animation+" "+speed+"s linear infinite; -o-animation: "+animation+" "+speed+"s linear infinite; animation: "+animation+" "+speed+"s linear infinite; }</style>").appendTo("head");	
+
+	// restart the animation (e.g. for safari & ie)	
+	var cl = $(container).attr("class");
+	$(container).removeClass(cl).animate({'nothing':null}, 1, function () {
+		$(this).addClass(cl);
+	});
+}
+    </script>
+    
+    <script>
+
+$(window).load(function() {
+    $("#flexiselDemo1").flexisel({
+        visibleItems:4,
+        animationSpeed:500,
+        autoPlay: true,
+        autoPlaySpeed: 5000, 
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems:1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems:2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems:4
+            },
+			tablet: { 
+                changePoint:991,
+                visibleItems:4
+            }
+        }
+    });
+	
+
+$("#flexiselDemo2").flexisel({
+        visibleItems:3,
+        animationSpeed: 500,
+        autoPlay: true,
+        autoPlaySpeed: 5000, 
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems:3
+            },
+			tablet: { 
+                changePoint:991,
+                visibleItems: 3
+            }
+        }
+    });
+
+
+$("#flexiselDemo3").flexisel({
+        visibleItems:5,
+        animationSpeed: 5000,
+        autoPlay: true,
+        autoPlaySpeed: 5000, 
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 4
+            },
+			tablet: { 
+                changePoint:991,
+                visibleItems: 5
+            }
+        }
+    });
+	
+
+
+});
+
+</script>
+
+    <!-- parralax -->
+
+
+<script>
+
+	$(document).ready(function(){
+
+   // cache the window object
+
+   $window = $(window);
+
+   $('div[data-type="background"]').each(function(){
+
+     // declare the variable to affect the defined data-type
+
+     var $scroll = $(this);
+
+      $(window).scroll(function() {
+
+        // HTML5 proves useful for helping with creating JS functions!
+
+        // also, negative value because we're scrolling upwards                             
+
+        var yPos = -($window.scrollTop() / $scroll.data('speed')); 
+
+        // background position
+
+        var coords = '50% '+ yPos + 'px';
+
+        // move the background
+
+        $scroll.css({ backgroundPosition: coords });    
+
+      }); // end window scroll
+
+   });  // end section fun
+
+   }); // close out script
+
+</script>
+
+    
+    
+</body>
+
+</html>
